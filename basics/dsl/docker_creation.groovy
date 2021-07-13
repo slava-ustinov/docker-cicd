@@ -10,7 +10,7 @@ job('NodeJS Docker example') {
     }
     steps {
         dockerBuildAndPublish {
-            buildContext('./basics/)
+            buildContext('./basics/')
             repositoryName('slavaus/docker-nodejs-demo')
             tag('${GIT_REVISION,length=9}')
             registryCredentials('Dockerhub')
