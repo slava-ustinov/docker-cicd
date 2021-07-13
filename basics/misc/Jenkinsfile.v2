@@ -9,7 +9,7 @@ node {
      def myTestContainer = docker.image('node:4.6')
      myTestContainer.pull()
      myTestContainer.inside {
-       sh 'cd ./basics && pm install --only=dev'
+       sh 'cd ./basics && npm install --only=dev'
        sh 'cd ./basics && npm test'
      }
    }
