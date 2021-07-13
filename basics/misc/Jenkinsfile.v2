@@ -25,7 +25,7 @@ node {
    }                                     
    stage('docker build/push') {            
      docker.withRegistry('https://index.docker.io/v1/', 'Dockerhub') {
-       def app = docker.build("slavaus/docker-pipeline-nodejs-demo:${commit_id}", '.').push()
+       def app = docker.build("slavaus/docker-pipeline-nodejs-demo:${commit_id}", '-f ./basics/Dockerfile .').push()
      }                                     
    }                                       
 }                                          
